@@ -1,0 +1,70 @@
+Relatório de Teste de Man-in-the-Middle (MITM)
+
+Objetivo do Teste:
+
+Avaliar a vulnerabilidade das máquinas da empresa a ataques Man-in-the-Middle (MITM), utilizando ferramentas específicas para interceptação de tráfego, tanto com o Zscaler ativado quanto desativado, para verificar a eficácia da solução de segurança implementada.
+
+Ferramentas Utilizadas:
+
+SET (Social-Engineer Toolkit): Ferramenta para criar ataques de engenharia social, como phishing e manipulação de tráfego de rede.
+Bettercap: Ferramenta para realizar ataques MITM, como interceptação de pacotes, modificação de tráfego HTTP/HTTPS e outros ataques relacionados à rede.
+Zscaler: Solução de segurança na nuvem que inclui inspeção de tráfego, prevenção contra malware, e controles de acesso à rede.
+Metodologia:
+Os testes foram realizados em duas fases:
+
+Fase 1: Teste sem Zscaler ativado
+
+Descrição: A solução Zscaler foi desativada para testar a vulnerabilidade das máquinas na rede corporativa sem proteção adicional.
+Ferramentas utilizadas: SEToolkit para gerar ataques de engenharia social e Bettercap para realizar o ataque MITM.
+Fase 2: Teste com Zscaler ativado
+
+Descrição: A solução Zscaler foi ativada para avaliar a eficácia da proteção fornecida, impedindo a execução do ataque MITM.
+Ferramentas utilizadas: Bettercap para realizar o ataque MITM.
+Resultados do Teste:
+Fase 1 - Teste sem Zscaler ativado:
+
+Ataques realizados: Durante a execução do ataque MITM, foi possível interceptar pacotes, capturar credenciais e redirecionar tráfego de maneira bem-sucedida. A vulnerabilidade foi confirmada em diversas máquinas.
+Resumo dos resultados:
+Interceptação de tráfego: Sucesso na interceptação de dados em tráfego HTTP/HTTPS.
+Exfiltração de dados: Foi possível extrair informações sensíveis, incluindo credenciais de acesso.
+Acesso não autorizado: Constatou-se que, sem a proteção do Zscaler, os dispositivos na rede estavam suscetíveis a ataques de MITM, podendo ter informações roubadas ou ser manipuladas.
+Fase 2 - Teste com Zscaler ativado:
+
+Ataques realizados: A ativação do Zscaler resultou na prevenção do ataque MITM. O tráfego foi criptografado e inspecionado pela plataforma, impedindo a interceptação de pacotes.
+Resumo dos resultados:
+Interceptação de tráfego: O Zscaler foi eficaz em bloquear tentativas de interceptação de tráfego.
+Criptografia e inspeção de tráfego: O Zscaler inspecionou o tráfego e impediu a manipulação de pacotes, tornando o ataque ineficaz.
+Conclusão: A proteção do Zscaler demonstrou ser efetiva em mitigar ataques MITM, garantindo a segurança dos dados durante a comunicação.
+Análise e Conclusões:
+Sem a proteção do Zscaler:
+
+Foi possível realizar um ataque MITM com sucesso, interceptando e manipulando pacotes de rede. Isso evidencia a vulnerabilidade das máquinas na rede corporativa sem a aplicação de soluções de segurança adequadas.
+Com a proteção do Zscaler ativada:
+
+O Zscaler foi eficaz na prevenção do ataque MITM, protegendo as comunicações e garantindo a integridade e confidencialidade dos dados.
+Recomendações:
+
+Reforçar o uso de soluções de segurança: A ativação do Zscaler demonstrou ser um mecanismo eficiente de defesa contra ataques MITM. É essencial que todos os dispositivos e conexões corporativas utilizem soluções de segurança em tempo real, como o Zscaler, para mitigar riscos de interceptação de tráfego.
+Treinamento de usuários: A educação de usuários sobre como identificar ataques de phishing e outros ataques de engenharia social continua sendo uma medida importante.
+Revisão de políticas de rede e segurança: Implementar controles mais rigorosos para garantir que todas as máquinas estejam configuradas corretamente para utilizar a proteção Zscaler ou outras soluções de segurança de rede.
+Prints de Tela:
+1. Print de Tela - Fase 1 (Sem Zscaler):
+
+Na primeira fase do teste, foi possível capturar requisições DNS não criptografadas, o que permitiu a realização de ataques de MITM. Abaixo segue o print da ferramenta Bettercap, exibindo as requisições DNS interceptadas sem a presença do Zscaler:
+
+
+Descrição: O print acima mostra as requisições DNS de dispositivos comprometidos, com sucesso na interceptação de pacotes de rede, permitindo que o tráfego fosse manipulado por um atacante.
+
+2. Print de Tela - Fase 2 (Com Zscaler):
+
+Na segunda fase do teste, com o Zscaler ativado, as requisições DNS passaram a ser protegidas, e a interceptação foi bloqueada. Abaixo segue o print da ferramenta Bettercap, mostrando que as requisições DNS não puderam ser interceptadas devido à criptografia e inspeção em tempo real do tráfego, realizado pelo Zscaler:
+
+
+Descrição: O print acima demonstra que as requisições DNS estão agora protegidas, com o tráfego sendo criptografado e inspecionado, dificultando a realização de um ataque MITM.
+
+Conclusão:
+Este teste demonstrou que a proteção contra ataques MITM é significativamente aumentada com a utilização do Zscaler, impedindo a interceptação de tráfego e garantindo a segurança das informações. A presença de um sistema de segurança ativo, como o Zscaler, foi fundamental para bloquear tentativas de manipulação de pacotes e garantir a integridade da comunicação.
+
+Data do teste: [Inserir data]
+Responsável pelo teste: [Seu nome]
+Assinatura: [Assinatura digital ou nome completo]
